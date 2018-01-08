@@ -60,6 +60,10 @@ int bn5 = 67; //버튼5의  note(음계)  가령 "솔"
 int bn6 = 69; //버튼6의  note(음계)  가령 "라"
 int bn7 = 71; //버튼7의  note(음계)  가령 "시"
 int bn8 = 72; //버튼8의  note(음계)  가령 "도~"
+int bn9 = 74;
+int bn10 = 76;
+int bn11 = 77;
+int bn12 = 79;
 
 void setup() {
   Serial.begin(57600);
@@ -77,6 +81,19 @@ void setup() {
 
   pinMode(button, INPUT_PULLUP);
 
+  br1 = analogRead(CdsPin1);
+  br2 = analogRead(CdsPin2);
+  br3 = analogRead(CdsPin3);
+  br4 = analogRead(CdsPin4);
+  br5 = analogRead(CdsPin5);
+  br6 = analogRead(CdsPin6);
+  br7 = analogRead(CdsPin7);
+  br8 = analogRead(CdsPin8);
+  br9 = analogRead(CdsPin9);
+  br10 = analogRead(CdsPin10);
+  br11 = analogRead(CdsPin11);
+  br12 = analogRead(CdsPin12);
+  
   br1_B = br1;  
   br2_B = br2;  
   br3_B = br3;
@@ -89,6 +106,34 @@ void setup() {
   br10_B = br10;
   br11_B = br11;
   br12_B = br12;
+  delay(500);
+
+  
+  Serial.print(br1_B);
+  Serial.print(" ");
+  Serial.print(br2_B);
+  Serial.print(" ");  
+  Serial.print(br3_B);
+  Serial.print(" ");
+  Serial.print(br4_B);
+  Serial.print(" ");
+  Serial.print(br5_B);
+  Serial.print(" ");
+  Serial.print(br6_B);
+  Serial.print(" ");
+  Serial.print(br7_B);
+  Serial.print(" ");
+  Serial.print(br8_B);
+  Serial.print(" ");
+  Serial.print(br9_B);
+  Serial.print(" ");
+  Serial.print(br10_B);
+  Serial.print(" ");
+  Serial.print(br11_B);
+  Serial.print(" ");
+  Serial.print(br12_B);
+
+  
 }
 
 
@@ -145,69 +190,91 @@ void loop() {
   Serial.print(" ");
   Serial.println(instrument);
     
-//   if( !bs1 && !br1 ){
-//     noteOn(0, bn1,100);
-//     bs1 = true;
-//   }else if(bs1 && br1){
-//     noteOff(0, bn1,0);   
-//     bs1 = false;
-//   }
-//   if( !bs2 && !br2 ){
-//     noteOn(0, bn2,100);
-//     bs2 = true;
-//   }else if(bs2 && br2){
-//     noteOff(0, bn2,0);   
-//
-//     bs2 = false;
-//   }   
-//   if( !bs3 && !br3 ){
-//     noteOn(0, bn3,100);
-//     bs3 = true;
-//   }else if(bs3 && br3){
-//     noteOff(0, bn3,0);   
-//     bs3 = false;
-//   }
-//   if( !bs4 && !br4 ){
-//     noteOn(0, bn4,100);
-//     bs4 = true;
-//   }else if(bs4 && br4){
-//     noteOff(0, bn4,0);   
-//     bs4 = false;
-//   }
-//   
-//   if( !bs5 && !br5 ){
-//     noteOn(0, bn5,100);
-//     bs5 = true;
-//   }else if(bs5 && br5){
-//     noteOff(0, bn5,0);   
-//     bs5 = false;
-//   }
-//   
-//   if( !bs6 && !br6 ){
-//     noteOn(0, bn6,100);
-//     bs6 = true;
-//   }else if(bs6 && br6){
-//     noteOff(0, bn6,0);   
-//     bs6 = false;
-//   }   
-//   
-//   if( !bs7 && !br7 ){
-//     noteOn(0, bn7,100);
-//     bs7 = true;
-//   }else if(bs7 && br7){
-//     noteOff(0, bn7,0);   
-//     bs7 = false;
-//   }   
-//   if( !bs8 && !br8 ){
-//     noteOn(0, bn8,100);
-//     bs8 = true;
-//   }else if(bs8 && br8){
-//     noteOff(0, bn8,0);   
-//     bs8 = false;
-//   }
-//   
-//
-//  //delay(1000);
+   if( br1 < br1_B - 50 ){
+     noteOn(0, bn1,100);
+     Serial.print("H");
+   }else{
+     noteOff(0, bn1,0);   
+     Serial.print("L");
+   }
+   if( br2 < br2_B - 50 ){
+     noteOn(0, bn2,100);
+     Serial.print("H");
+   }else{
+     noteOff(0, bn2,0);  
+     Serial.print("L"); 
+   }
+   if( br3 < br3_B - 50 ){
+     noteOn(0, bn3,100);
+     Serial.print("H");
+   }else{
+     noteOff(0, bn3,0);  
+     Serial.print("L"); 
+   }
+   if( br4 < br4_B - 50 ){
+     noteOn(0, bn4,100);
+     Serial.print("H");
+   }else{
+     noteOff(0, bn4,0); 
+     Serial.print("L");  
+   }
+   if( br5 < br5_B - 50 ){
+     noteOn(0, bn5,100);
+     Serial.print("H");
+   }else{
+     noteOff(0, bn5,0); 
+     Serial.print("L");  
+   }
+   if( br6 < br6_B - 50 ){
+     noteOn(0, bn6,100);
+     Serial.print("H");
+   }else{
+     noteOff(0, bn6,0);   
+     Serial.print("L");
+   }
+   if( br7 < br7_B - 50 ){
+     noteOn(0, bn7,100);
+     Serial.print("H");
+   }else{
+     noteOff(0, bn7,0); 
+     Serial.print("L");  
+   }
+   if( br8 < br8_B - 50 ){
+     noteOn(0, bn8,100);
+     Serial.print("H");
+   }else{
+     noteOff(0, bn8,0); 
+     Serial.print("L");  
+   }
+   if( br9 < br9_B - 50 ){
+     noteOn(0, bn9,100);
+     Serial.print("H");
+   }else{
+     noteOff(0, bn9,0); 
+     Serial.print("L");  
+   }
+   if( br10 < br10_B - 50 ){
+     noteOn(0, bn10,100);
+     Serial.print("H");
+   }else{
+     noteOff(0, bn10,0);
+     Serial.print("L");   
+   }
+   if( br11 < br11_B - 50 ){
+     noteOn(0, bn11,100);
+     Serial.print("H");
+   }else{
+     noteOff(0, bn11,0);
+     Serial.print("L");   
+   }
+   if( br12 < br12_B - 50 ){
+     noteOn(0, bn12,100);
+     Serial.print("H");
+   }else{
+     noteOff(0, bn12,0);
+     Serial.println("L");   
+   }
+  delay(1000);
 }
 
 //Send a MIDI note-on message.  Like pressing a piano key
