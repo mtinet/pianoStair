@@ -39,6 +39,19 @@ int br11;
 int br12;
 
 
+int br1_B;  // 버튼1 상태 확인용 입력값 임시저장용
+int br2_B;  // 이하, 위와 유사
+int br3_B;
+int br4_B;
+int br5_B;
+int br6_B;
+int br7_B;
+int br8_B;
+int br9_B;
+int br10_B;
+int br11_B;
+int br12_B;
+
 int bn1 = 60; //버튼1의  note(음계)  가령 "도"  0~127까지 지정가능 (정확한 음계 설정은 MIDI관련정보참고)
 int bn2 = 62; //버튼2의  note(음계)  가령 "레"
 int bn3 = 64; //버튼3의  note(음계)  가령 "미"
@@ -63,11 +76,30 @@ void setup() {
   talkMIDI(0xB0, 0x07, 120);
 
   pinMode(button, INPUT_PULLUP);
+
+  br1_B = br1;  
+  br2_B = br2;  
+  br3_B = br3;
+  br4_B = br4;
+  br5_B = br5;
+  br6_B = br6;
+  br7_B = br7;
+  br8_B = br8;
+  br9_B = br9;
+  br10_B = br10;
+  br11_B = br11;
+  br12_B = br12;
 }
 
 
 void loop() {
-  
+  if (buttonState == false) {
+    instrument ++;
+  }
+  if (instrument > 127) {
+    instrument = 0;
+  }
+    
   talkMIDI(0xC0, instrument, 0);
   
   br1 = analogRead(CdsPin1);
@@ -93,24 +125,25 @@ void loop() {
   Serial.print(" ");
   Serial.print(br4);
   Serial.print(" ");
-    Serial.print(br5);
+  Serial.print(br5);
   Serial.print(" ");
-    Serial.print(br6);
+  Serial.print(br6);
   Serial.print(" ");
-    Serial.print(br7);
+  Serial.print(br7);
   Serial.print(" ");
-    Serial.print(br8);
+  Serial.print(br8);
   Serial.print(" ");
-    Serial.print(br9);
+  Serial.print(br9);
   Serial.print(" ");
-    Serial.print(br10);
+  Serial.print(br10);
   Serial.print(" ");
-    Serial.print(br11);
+  Serial.print(br11);
   Serial.print(" ");
-    Serial.print(br12);
-      Serial.print(" ");
-    Serial.println(buttonState);
-
+  Serial.print(br12);
+  Serial.print(" ");
+  Serial.print(buttonState);
+  Serial.print(" ");
+  Serial.println(instrument);
     
 //   if( !bs1 && !br1 ){
 //     noteOn(0, bn1,100);
