@@ -1,4 +1,3 @@
-
 #include <SoftwareSerial.h>
 
 SoftwareSerial mySerial(2, 3); //SW시리얼핀 정의 D3이 MIDI신호 전송용,  D2는 미사용 
@@ -191,87 +190,87 @@ void loop() {
   Serial.println(instrument);
     
    if( br1 < br1_B - 50 ){
-     noteOn(0, bn1,100);
+     noteOn(0, bn1, 50);
      Serial.print("H");
    }else{
-     noteOff(0, bn1,0);   
+     noteOff(0, bn1, 0);   
      Serial.print("L");
    }
    if( br2 < br2_B - 50 ){
-     noteOn(0, bn2,100);
+     noteOn(0, bn2, 50);
      Serial.print("H");
    }else{
-     noteOff(0, bn2,0);  
+     noteOff(0, bn2, 0);  
      Serial.print("L"); 
    }
    if( br3 < br3_B - 50 ){
-     noteOn(0, bn3,100);
+     noteOn(0, bn3, 50);
      Serial.print("H");
    }else{
-     noteOff(0, bn3,0);  
+     noteOff(0, bn3, 0);  
      Serial.print("L"); 
    }
    if( br4 < br4_B - 50 ){
-     noteOn(0, bn4,100);
+     noteOn(0, bn4, 50);
      Serial.print("H");
    }else{
-     noteOff(0, bn4,0); 
+     noteOff(0, bn4, 0); 
      Serial.print("L");  
    }
    if( br5 < br5_B - 50 ){
-     noteOn(0, bn5,100);
+     noteOn(0, bn5, 50);
      Serial.print("H");
    }else{
-     noteOff(0, bn5,0); 
+     noteOff(0, bn5, 0); 
      Serial.print("L");  
    }
    if( br6 < br6_B - 50 ){
-     noteOn(0, bn6,100);
+     noteOn(0, bn6, 50);
      Serial.print("H");
    }else{
-     noteOff(0, bn6,0);   
+     noteOff(0, bn6, 0);   
      Serial.print("L");
    }
    if( br7 < br7_B - 50 ){
-     noteOn(0, bn7,100);
+     noteOn(0, bn7, 50);
      Serial.print("H");
    }else{
-     noteOff(0, bn7,0); 
+     noteOff(0, bn7, 0); 
      Serial.print("L");  
    }
    if( br8 < br8_B - 50 ){
-     noteOn(0, bn8,100);
+     noteOn(0, bn8, 50);
      Serial.print("H");
    }else{
-     noteOff(0, bn8,0); 
+     noteOff(0, bn8, 0); 
      Serial.print("L");  
    }
    if( br9 < br9_B - 50 ){
-     noteOn(0, bn9,100);
+     noteOn(0, bn9, 50);
      Serial.print("H");
    }else{
-     noteOff(0, bn9,0); 
+     noteOff(0, bn9, 0); 
      Serial.print("L");  
    }
    if( br10 < br10_B - 50 ){
-     noteOn(0, bn10,100);
+     noteOn(0, bn10, 50);
      Serial.print("H");
    }else{
-     noteOff(0, bn10,0);
+     noteOff(0, bn10, 0);
      Serial.print("L");   
    }
    if( br11 < br11_B - 50 ){
-     noteOn(0, bn11,100);
+     noteOn(0, bn11, 50);
      Serial.print("H");
    }else{
-     noteOff(0, bn11,0);
+     noteOff(0, bn11, 0);
      Serial.print("L");   
    }
    if( br12 < br12_B - 50 ){
-     noteOn(0, bn12,100);
+     noteOn(0, bn12, 50);
      Serial.print("H");
    }else{
-     noteOff(0, bn12,0);
+     noteOff(0, bn12, 0);
      Serial.println("L");   
    }
   delay(1000);
