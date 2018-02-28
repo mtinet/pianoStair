@@ -110,7 +110,7 @@ void loop() {
      Serial.print("H");
    }else{
      noteOff(0, bn3, 0);  
-     Serial.print("L"); 
+     Serial.println("L"); 
    }
   delay(1000);
 }
