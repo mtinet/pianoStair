@@ -107,7 +107,7 @@ void loop() {
    }
    if( br3 < br3_B - 50 ){
      noteOn(0, bn3, 50);
-     Serial.print("H");
+     Serial.println("H");
    }else{
      noteOff(0, bn3, 0);  
      Serial.println("L"); 
